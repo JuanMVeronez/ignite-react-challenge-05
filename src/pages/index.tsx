@@ -48,9 +48,6 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
 
   return (
     <>
-      <header>
-        <img src="./assets/logo.svg" alt="logo" />
-      </header>
       <main className={styles.container}>
         {posts.map(post => (
           <Link key={post.uid} href={`/post/${post.uid}`}>
