@@ -11,6 +11,7 @@ import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 import Prismic from '@prismicio/client'
+import { useRouter } from 'next/router';
 
 interface Post {
   first_publication_date: string | null;
@@ -34,7 +35,9 @@ interface PostProps {
 }
 
 export default function Post({post}: PostProps) {
-  if (!post) return (
+  const { isFallback } = useRouter()
+
+  if (isFallback) return (
     <span className={styles.loading}>Carregando...</span>
   )
 
@@ -71,7 +74,6 @@ export default function Post({post}: PostProps) {
           )))}
         </section>
       </main>
-      <p className={`${styles.loading} ${styles.loadingBug}`}>Carregando...</p>
     </>
   )
 }
