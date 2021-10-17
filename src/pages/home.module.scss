@@ -1,13 +1,10 @@
 .container {
-  max-width: 1120px;
+  max-width: 784px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 .post {
-  max-width: 700px;
-  margin: 0 auto;
-
   display: block;
 
   strong {
@@ -42,5 +39,19 @@
 
   a+& {
     margin-top: 3rem;
+  }
+}
+
+.loadPostsButton {
+  margin-top: 4rem;
+  background-color: transparent;
+  border: none;
+
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--pink-500);
+
+  &:hover {
+    text-decoration: underline;
   }
 }
